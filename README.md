@@ -7,6 +7,7 @@ Simple Product list Project Based on symfony 5
 - Send Notification after adding product
 
 ![Simple project login](https://user-images.githubusercontent.com/7303506/104508051-561a2c80-55f0-11eb-9cf3-a6e8b999e9e0.png)
+![Product](https://user-images.githubusercontent.com/7303506/104508219-937eba00-55f0-11eb-8df1-20db3fb02fbe.png)
 
 
 # Frontend 
