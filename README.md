@@ -6,6 +6,9 @@ Simple Product list Project Based on symfony 5
 - Add Product 
 - Send Notification after adding product
 
+![Simple project login](https://user-images.githubusercontent.com/7303506/104508051-561a2c80-55f0-11eb-9cf3-a6e8b999e9e0.png)
+
+
 # Frontend 
 - List all the products Sorted by created date from Newest To oldest 
 - Adding Pagination (10 pages per page)
