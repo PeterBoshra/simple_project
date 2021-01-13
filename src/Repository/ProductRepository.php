@@ -16,6 +16,7 @@ class ProductRepository extends ServiceEntityRepository
 
     /**
      * @return Query of All Products
+     * Order By id DESC
     */
     public function findAllQueryBuilder()
     {
