@@ -36,7 +36,7 @@ class AdminDashboardController extends AbstractDashboardController
         return [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
 
-            MenuItem::linkToCrud('Products', 'fa fa-shop', Product::class),
+            MenuItem::linkToCrud('Products', 'fa fa-tags', Product::class),
             MenuItem::linkToCrud('Currencies', 'fa fa-money', Currency::class),
 
         ];        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
