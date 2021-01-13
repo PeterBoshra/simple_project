@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Main List Products page{% endblock %}
+
+{% block body %}
+    {# total items count #}
+    <div class="count">
+        {{ pagination.getTotalItemCount }}
+    </div>
+    <table>
+        <tr>
+            <th>{{ knp_pagination_sortable(pagination, 'Id', 'p.id') }}</th>
+            <th{% if pagination.isSorted('p.name') %} class="sorted"{% endif %}>
+                {{ knp_pagination_sortable(pagination, 'Name', 'p.name') }}
+            </th>
+            <th{% if pagination.isSorted(['a.price']) %} class="sorted"{% endif %}>
+                {{ knp_pagination_sortable(pagination, 'Price', ['p.price']) }}
+            </th>
+        </tr>
+
+        {% for product in pagination %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}  {{ product.currency }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}
