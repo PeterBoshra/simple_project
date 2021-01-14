@@ -36,6 +36,11 @@ php bin/console doctrine:fixtures:load
 - Email : admin@admin.com
 - Password : peter
   
+## Using Symfony Server:run 
+
+`symfony server:start`
+`http://127.0.0.1:8000/login`
+
 ## Using Gmail to send verification email 
 - MAILER_URL=gmail://XXXX:****@default
 
