@@ -3,30 +3,32 @@
 {% block title %}Main List Products page{% endblock %}
 
 {% block body %}
-    {# total items count #}
-    <div class="count">
-        {{ pagination.getTotalItemCount }}
-    </div>
-    <table>
-        <tr>
-            <th>{{ knp_pagination_sortable(pagination, 'Id', 'p.id') }}</th>
-            <th{% if pagination.isSorted('p.name') %} class="sorted"{% endif %}>
-                {{ knp_pagination_sortable(pagination, 'Name', 'p.name') }}
-            </th>
-            <th{% if pagination.isSorted(['a.price']) %} class="sorted"{% endif %}>
-                {{ knp_pagination_sortable(pagination, 'Price', ['p.price']) }}
-            </th>
-        </tr>
 
-        {% for product in pagination %}
-            <tr>
-                <td>{{ product.id }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.price }}  {{ product.currency }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-    <div class="navigation">
-        {{ knp_pagination_render(pagination) }}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">List Products ({{ pagination.getTotalItemCount }})</h1>
     </div>
-{% endblock %}
+
+    <div class="container">
+        <div class="card-deck mb-3 text-center">
+            {% for product in pagination %}
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">{{ product.id }} - {{ product.name }}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">{{ product.price }}
+                            <small class="text-muted">{{ product.currency }}</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            {{ product.description|raw }}
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="mb-3 navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    </div>
+    {% endblock %}
