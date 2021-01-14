@@ -36,4 +36,6 @@ php bin/console doctrine:fixtures:load
 - Email : admin@admin.com
 - Password : peter
   
+## Using Gmail to send verification email 
+- MAILER_URL=gmail://XXXX:****@default
 
